@@ -394,48 +394,6 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
   </div>
   <div class="chips" id="chips" role="group" aria-label="Pilih adegan"></div>
   <p class="hint">Klik sisi kanan video untuk adegan berikutnya, sisi kiri untuk sebelumnya, dan tengah untuk jeda atau putar. Di HP bisa swipe. Matikan Autoplay untuk pindah adegan secara manual. Suara mulai terdengar setelah klik pertama di halaman.</p>
-
-  <section class="rm" aria-label="Laporan untuk tim">
-    <div class="rm-top">
-      <div class="eb">Untuk tim</div>
-      <h2>Detail sumber dan batas demo</h2>
-      <p>Layar phone meniru kode faster-app v0.18.0 (cabang latest/ngeshare-online) di perangkat Android. Semua orang, grup, skor, kota, dan konten Feed adalah data contoh. Nama TemanBaik dan Teman masih rencana; aplikasi v0.18 masih menulis Fasilitator dan Member.</p>
-    </div>
-    <div class="tbl">
-      <table>
-        <thead><tr><th>Adegan</th><th>Peran</th><th>Layar v0.18 (file di faster-app)</th><th>Referensi asli</th></tr></thead>
-        <tbody>
-          <tr><td>01 Hook</td><td><span class="own">Teman</span></td><td>(tabs_slower)/hangout.tsx, (tabs_slower)/_layout.tsx, hangout_card.tsx</td><td>Kode; deck slide 3 dan 6 (kartu)</td></tr>
-          <tr><td>02 Barcode</td><td><span class="own own-b">TemanBaik</span></td><td>[id_hangout]/index.tsx, navbar_ho_detail.tsx, topcard.tsx, render_episode.tsx, attendance/[id_episode].tsx</td><td>Deck slide 3 (detail); openchamber hangout-detail-top</td></tr>
-          <tr><td>03 Hadir</td><td><span class="own">Teman</span></td><td>(tabs_slower)/hangout.tsx, scan_attendance/index.tsx, scan_attendance/[id].tsx</td><td>Kode saja</td></tr>
-          <tr><td>04 Online</td><td><span class="own">Teman</span></td><td>online/index.tsx, detail_eps.tsx, waiting_room.tsx, ChatRoom.tsx</td><td>Deck slide 6; openchamber episode2-waiting-room</td></tr>
-          <tr><td>05 Materi FAQ</td><td><span class="own">Teman</span></td><td>detail_eps.tsx, faq/faq_video.tsx, faq/RenderQna.tsx</td><td>openchamber episode-faq</td></tr>
-          <tr><td>06 Tanya</td><td><span class="own">Teman</span></td><td>slower/[id].tsx, qna.tsx, ask/asklist.tsx, ask/askinput.tsx</td><td>Kode saja</td></tr>
-          <tr><td>07 Kuis</td><td><span class="own">Teman</span></td><td>quiz/[id].tsx, render_quiz.tsx, question/[id].tsx, CustomBottomSheet.tsx, leaderboard/[id].tsx, Podium.tsx</td><td>Kode; nama peringkat dari tangkapan layar user</td></tr>
-          <tr><td>08 Vibes</td><td><span class="own">Teman</span></td><td>(tabs_slower)/index.tsx, FeedItem.tsx, LikeButton.tsx, MediaMosaicGrid.tsx, VibeItem.tsx</td><td>Deck slide 7</td></tr>
-          <tr><td>09 Jadwal</td><td><span class="own own-b">TemanBaik</span></td><td>EditGroupBottomSheet.tsx, reschedule.tsx, EpisodeScheduleItem.tsx</td><td>openchamber reschedule-kuota</td></tr>
-          <tr><td>10 Selesai</td><td><span class="own own-b">TemanBaik</span></td><td>[id_hangout]/index.tsx (bar Konfirmasi Selesaikan), score/index.tsx</td><td>Deck slide 3; openchamber hangout-detail-top</td></tr>
-          <tr><td>11 Ajukan</td><td><span class="own own-b">TemanBaik</span></td><td>(tabs_faster)/hangout.tsx, performance/members.tsx, performance/[id_member].tsx, MemberCard.tsx</td><td>Deck slide 4 (kartu Ajukan); openchamber member-session</td></tr>
-          <tr><td>12 Rencana</td><td><span class="own">-</span></td><td>Tidak ada layar aplikasi (rencana)</td><td>Deck slide 9 dan 10 (Upcoming)</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="val">
-      <div class="rm-top"><h2 style="font-size:20px;margin:0">Yang perlu divalidasi</h2></div>
-      <ol>
-        <li>Nama <b>TemanBaik</b> dan <b>Teman</b> masih rencana (deck: "Nama TemanBaik" di Fitur Upcoming). Aplikasi v0.18 masih menampilkan Fasilitator dan Member; demo ini mengganti teks di layar phone.</li>
-        <li>Kuota QnA: teks aplikasi bilang "1 per sesi hangout", deck bilang "maks 2 per Teman". Layar phone memakai teks aplikasi apa adanya; panggung tidak menyebut angka.</li>
-        <li>Jendela kuis H+1 sampai H+6 diatur server, bukan aplikasi (fakta dari deck).</li>
-        <li>Semua orang, grup, skor, dan kota adalah data contoh. Nama peringkat (Nids, Winda Aryani, Nurjanah, tiyo) dari tangkapan layar user.</li>
-        <li>Aset disalin dari faster-app v0.18.0 ke ngeshare-app-demo-assets/ (termasuk Feather.ttf dari node_modules). Salin ulang jika aplikasi berubah.</li>
-        <li>Tata letak sengaja keluar dari grid GTI: phone berukuran asli (390×844 diskalakan) agar teks terbaca.</li>
-        <li>"Calon Fasilitator" bukan jenjang. Pengajuan TemanBaik butuh Hijrah plus skor sistem, tidak otomatis.</li>
-        <li>Kuota Libur 1×, Reschedule 2×, Booster 1× tanpa periode. Teks info layar Ubah Jadwal ("Booster – adakan 2 kali dalam seminggu") berarti lain dari kuota Booster; teks itu tampil apa adanya di phone.</li>
-        <li>Fidelity berasal dari kode v0.18, bukan dari tangkapan layar v0.18. Bayangan Android (elevation), bilah status, ukuran huruf tab, dan thumbnail video adalah perkiraan atau placeholder. Deck menampilkan durasi di thumbnail episode; kode v0.18 tidak, jadi demo mengikuti kode.</li>
-      </ol>
-      <p class="fine">Sumber: deck Panduan Fitur ngeSlow 2026 dan kode faster-app v0.18.0 (latest/ngeshare-online). Batas: demo tanpa backend, tanpa data nyata, tanpa klaim video-conference, tanpa janji rilis Upcoming (Tarbiyah Online, Jenjang, AI QnA tetap berlabel PLAN).</p>
-    </div>
-  </section>
 </div>
 
 <script>
