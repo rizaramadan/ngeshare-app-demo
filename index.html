@@ -288,6 +288,29 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
 @media (prefers-reduced-motion: reduce){
   .sc.on .phone .p-win,.sc.on .phone .p-win.pw-last,.sc.on .phone .p-spin{animation:none!important}
 }
+
+/* ---- v6: Pola Jadwal (no-phone explainer with three month calendars) ---- */
+.pj-sub{position:absolute;left:72px;top:122px;font:600 16px/1.3 var(--f);color:var(--n6)}
+.pj-cal{position:absolute;width:336px;height:380px;z-index:1}
+.pj-cal.cp{--ac:var(--p);--af:#fff} .pj-cal.cg{--ac:var(--g);--af:#fff} .pj-cal.co{--ac:var(--o);--af:#5A3C00}
+.pj-hd{position:absolute;left:0;top:0;width:336px;display:flex;align-items:center;gap:8px;white-space:nowrap;font:800 19px/1.2 var(--f);color:var(--p7)}
+.pj-hd small{font:600 13px/1 var(--f);color:var(--n6)}
+.pj-hd .tag{margin-left:auto}
+.pj-mo{position:absolute;left:0;top:38px;width:336px;font:800 12px/1 var(--f);letter-spacing:.1em;text-transform:uppercase;color:var(--n6)}
+.pj-dw{position:absolute;top:58px;width:46px;text-align:center;font:700 11.5px/1 var(--f);color:var(--n5)}
+.pj-ce{position:absolute;width:46px;height:42px;border-radius:8px;background:var(--n0);border:1px solid var(--n3);text-align:center;font:700 13px/1 var(--f);color:var(--n7);padding-top:4px;box-sizing:border-box}
+.pj-ce.tp{background:var(--p1);border-color:var(--p2)} .pj-ce.tg{background:var(--g1);border-color:#BFE3D5} .pj-ce.to{background:var(--o0);border-color:var(--o1)}
+.pj-mk{position:absolute;z-index:5;width:34px;height:22px;border-radius:8px;display:flex;align-items:center;justify-content:center;font:800 12px/1 var(--f);background:var(--p2);color:var(--p);box-shadow:0 2px 6px rgba(23,18,79,.18)}
+.pj-tx{position:absolute;left:0;top:312px;width:336px;font:500 15.5px/1.42 var(--f);color:var(--n7)}
+.pj-tx b{font-weight:800;color:var(--p7)}
+.sc.on .pj-mk{animation:pjin .4s ease var(--d,0s) both}
+.sc.on .pj-mk.mv{animation:pjin .4s ease var(--d,0s) both,pjmv .8s cubic-bezier(.3,.7,.2,1) var(--m,0s) both}
+@keyframes pjin{from{opacity:0}to{opacity:1}}
+@keyframes pjmv{to{transform:translate(var(--dx),var(--dy));background:var(--ac);color:var(--af);box-shadow:0 8px 16px rgba(23,18,79,.25)}}
+@media (prefers-reduced-motion: reduce){
+  .sc.on .pj-mk,.sc.on .pj-mk.mv{animation:none!important}
+  .pj-mk.mv{transform:translate(var(--dx),var(--dy));background:var(--ac);color:var(--af)}
+}
 </style>
 </head>
 <body>
@@ -439,7 +462,16 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:0.9s"><span class="ib"><i class="ic" data-i="calendar"></i></span><span class="tx">Tombol Ubah ada di tiap episode</span></div><div class="ben" style="--d:2.2s"><span class="ib"><i class="ic" data-i="refresh"></i></span><span class="tx">Pilih Booster, Pindah Hari, atau Libur</span></div><div class="ben" style="--d:5.4s"><span class="ib"><i class="ic" data-i="lock"></i></span><span class="tx">Ketik kata konfirmasi agar tidak salah ubah</span></div></div>
       </section>
 
-      <!-- 18 Selesai (TemanBaik) -->
+      <!-- 18 Pola Jadwal (tanpa phone) -->
+      <section class="sc" aria-hidden="true">
+        <h2 class="hl f" style="--d:.1s">Tiga cara ubah jadwal: pindah, majukan, atau libur.</h2>
+        <div class="pj-sub f" style="--d:.4s">Contoh: jadwal rutin tiap Ahad. E1, E2, E3 = Eps 1, Eps 2, Eps 3.</div>
+        <div class="pj-cal f cp" style="left:72px;top:158px;--d:0.60s"><div class="pj-hd">Pindah Hari<small>Reschedule</small><span class="tag t-p">Maks 2× per sesi</span></div><div class="pj-mo">November 2026</div><div class="pj-dw" style="left:0px">Min</div><div class="pj-dw" style="left:48px">Sen</div><div class="pj-dw" style="left:96px">Sel</div><div class="pj-dw" style="left:144px">Rab</div><div class="pj-dw" style="left:192px">Kam</div><div class="pj-dw" style="left:240px">Jum</div><div class="pj-dw" style="left:288px">Sab</div><div class="pj-ce" style="left:0px;top:80px">1</div><div class="pj-ce" style="left:48px;top:80px">2</div><div class="pj-ce" style="left:96px;top:80px">3</div><div class="pj-ce" style="left:144px;top:80px">4</div><div class="pj-ce" style="left:192px;top:80px">5</div><div class="pj-ce" style="left:240px;top:80px">6</div><div class="pj-ce" style="left:288px;top:80px">7</div><div class="pj-ce" style="left:0px;top:124px">8</div><div class="pj-ce tp" style="left:48px;top:124px">9</div><div class="pj-ce tp" style="left:96px;top:124px">10</div><div class="pj-ce tp" style="left:144px;top:124px">11</div><div class="pj-ce tp" style="left:192px;top:124px">12</div><div class="pj-ce tp" style="left:240px;top:124px">13</div><div class="pj-ce tp" style="left:288px;top:124px">14</div><div class="pj-ce tp" style="left:0px;top:168px">15</div><div class="pj-ce tp" style="left:48px;top:168px">16</div><div class="pj-ce tp" style="left:96px;top:168px">17</div><div class="pj-ce tp" style="left:144px;top:168px">18</div><div class="pj-ce tp" style="left:192px;top:168px">19</div><div class="pj-ce tp" style="left:240px;top:168px">20</div><div class="pj-ce tp" style="left:288px;top:168px">21</div><div class="pj-ce" style="left:0px;top:212px">22</div><div class="pj-ce" style="left:48px;top:212px">23</div><div class="pj-ce" style="left:96px;top:212px">24</div><div class="pj-ce" style="left:144px;top:212px">25</div><div class="pj-ce" style="left:192px;top:212px">26</div><div class="pj-ce" style="left:240px;top:212px">27</div><div class="pj-ce" style="left:288px;top:212px">28</div><div class="pj-ce" style="left:0px;top:256px">29</div><div class="pj-ce" style="left:48px;top:256px">30</div><div class="pj-mk ap" data-ovok="1" style="left:7px;top:142px;--d:1.00s">E1</div><div class="pj-mk mv ap" data-ovok="1" style="left:7px;top:186px;--d:1.10s;--dx:192px;--dy:0px;--m:2.80s">E2</div><div class="pj-mk ap" data-ovok="1" style="left:7px;top:230px;--d:1.20s">E3</div><div class="pj-tx f" style="--d:3.90s"><b>Hanya Eps 2 pindah</b> ke tanggal pilihan (Kamis 19 Nov). Eps 3 tetap di 22 Nov. Tanggal baru: H-6 sampai H+6 dari jadwal rutin.</div></div>
+        <div class="pj-cal f cg" style="left:472px;top:158px;--d:0.60s"><div class="pj-hd">Booster<span class="tag t-g">Maks 1× per sesi</span></div><div class="pj-mo">November 2026</div><div class="pj-dw" style="left:0px">Min</div><div class="pj-dw" style="left:48px">Sen</div><div class="pj-dw" style="left:96px">Sel</div><div class="pj-dw" style="left:144px">Rab</div><div class="pj-dw" style="left:192px">Kam</div><div class="pj-dw" style="left:240px">Jum</div><div class="pj-dw" style="left:288px">Sab</div><div class="pj-ce" style="left:0px;top:80px">1</div><div class="pj-ce" style="left:48px;top:80px">2</div><div class="pj-ce" style="left:96px;top:80px">3</div><div class="pj-ce" style="left:144px;top:80px">4</div><div class="pj-ce" style="left:192px;top:80px">5</div><div class="pj-ce" style="left:240px;top:80px">6</div><div class="pj-ce" style="left:288px;top:80px">7</div><div class="pj-ce" style="left:0px;top:124px">8</div><div class="pj-ce tg" style="left:48px;top:124px">9</div><div class="pj-ce tg" style="left:96px;top:124px">10</div><div class="pj-ce tg" style="left:144px;top:124px">11</div><div class="pj-ce tg" style="left:192px;top:124px">12</div><div class="pj-ce tg" style="left:240px;top:124px">13</div><div class="pj-ce tg" style="left:288px;top:124px">14</div><div class="pj-ce" style="left:0px;top:168px">15</div><div class="pj-ce" style="left:48px;top:168px">16</div><div class="pj-ce" style="left:96px;top:168px">17</div><div class="pj-ce" style="left:144px;top:168px">18</div><div class="pj-ce" style="left:192px;top:168px">19</div><div class="pj-ce" style="left:240px;top:168px">20</div><div class="pj-ce" style="left:288px;top:168px">21</div><div class="pj-ce" style="left:0px;top:212px">22</div><div class="pj-ce" style="left:48px;top:212px">23</div><div class="pj-ce" style="left:96px;top:212px">24</div><div class="pj-ce" style="left:144px;top:212px">25</div><div class="pj-ce" style="left:192px;top:212px">26</div><div class="pj-ce" style="left:240px;top:212px">27</div><div class="pj-ce" style="left:288px;top:212px">28</div><div class="pj-ce" style="left:0px;top:256px">29</div><div class="pj-ce" style="left:48px;top:256px">30</div><div class="pj-mk ag" data-ovok="1" style="left:7px;top:142px;--d:1.00s">E1</div><div class="pj-mk mv ag" data-ovok="1" style="left:7px;top:186px;--d:1.10s;--dx:192px;--dy:-44px;--m:5.00s">E2</div><div class="pj-mk mv ag" data-ovok="1" style="left:7px;top:230px;--d:1.20s;--dx:0px;--dy:-44px;--m:5.60s">E3</div><div class="pj-tx f" style="--d:6.50s"><b>Jadwal maju 1 pekan.</b> Eps 2 maju ke tanggal pilihan (Kamis 12 Nov), Eps 3 ikut maju ke 15 Nov. Cocok untuk menyelesaikan lebih cepat.</div></div>
+        <div class="pj-cal f co" style="left:872px;top:158px;--d:0.60s"><div class="pj-hd">Libur<span class="tag t-o">Maks 1× per sesi</span></div><div class="pj-mo">November 2026</div><div class="pj-dw" style="left:0px">Min</div><div class="pj-dw" style="left:48px">Sen</div><div class="pj-dw" style="left:96px">Sel</div><div class="pj-dw" style="left:144px">Rab</div><div class="pj-dw" style="left:192px">Kam</div><div class="pj-dw" style="left:240px">Jum</div><div class="pj-dw" style="left:288px">Sab</div><div class="pj-ce" style="left:0px;top:80px">1</div><div class="pj-ce" style="left:48px;top:80px">2</div><div class="pj-ce" style="left:96px;top:80px">3</div><div class="pj-ce" style="left:144px;top:80px">4</div><div class="pj-ce" style="left:192px;top:80px">5</div><div class="pj-ce" style="left:240px;top:80px">6</div><div class="pj-ce" style="left:288px;top:80px">7</div><div class="pj-ce" style="left:0px;top:124px">8</div><div class="pj-ce" style="left:48px;top:124px">9</div><div class="pj-ce" style="left:96px;top:124px">10</div><div class="pj-ce" style="left:144px;top:124px">11</div><div class="pj-ce" style="left:192px;top:124px">12</div><div class="pj-ce" style="left:240px;top:124px">13</div><div class="pj-ce" style="left:288px;top:124px">14</div><div class="pj-ce" style="left:0px;top:168px">15</div><div class="pj-ce" style="left:48px;top:168px">16</div><div class="pj-ce" style="left:96px;top:168px">17</div><div class="pj-ce" style="left:144px;top:168px">18</div><div class="pj-ce" style="left:192px;top:168px">19</div><div class="pj-ce" style="left:240px;top:168px">20</div><div class="pj-ce" style="left:288px;top:168px">21</div><div class="pj-ce" style="left:0px;top:212px">22</div><div class="pj-ce" style="left:48px;top:212px">23</div><div class="pj-ce" style="left:96px;top:212px">24</div><div class="pj-ce" style="left:144px;top:212px">25</div><div class="pj-ce" style="left:192px;top:212px">26</div><div class="pj-ce" style="left:240px;top:212px">27</div><div class="pj-ce" style="left:288px;top:212px">28</div><div class="pj-ce" style="left:0px;top:256px">29</div><div class="pj-ce" style="left:48px;top:256px">30</div><div class="pj-mk ao" data-ovok="1" style="left:7px;top:142px;--d:1.00s">E1</div><div class="pj-mk mv ao" data-ovok="1" style="left:7px;top:186px;--d:1.10s;--dx:0px;--dy:44px;--m:7.40s">E2</div><div class="pj-mk mv ao" data-ovok="1" style="left:7px;top:230px;--d:1.20s;--dx:0px;--dy:44px;--m:8.00s">E3</div><div class="pj-tx f" style="--d:8.80s"><b>Jadwal mundur 1 pekan.</b> Eps 2 mundur ke 22 Nov, Eps 3 ke 29 Nov. Untuk kendala besar: sakit, dinas, atau musibah.</div></div>
+      </section>
+
+      <!-- 19 Selesai (TemanBaik) -->
       <section class="sc ph rb" aria-hidden="true">
         <div class="role rb f" style="--d:.05s"><i class="ic" data-i="shield"></i>Layar TemanBaik</div>
         <h2 class="hl f" style="--d:.15s">Episode terakhir selesai, hasil akhir langsung terlihat.</h2>
@@ -447,7 +479,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:0.8s"><span class="ib"><i class="ic" data-i="check"></i></span><span class="tx">Tombol muncul setelah episode terakhir</span></div><div class="ben" style="--d:2.4s"><span class="ib"><i class="ic" data-i="award"></i></span><span class="tx">Recap hasil akhir dalam satu layar</span></div><div class="ben" style="--d:3.4s"><span class="ib"><i class="ic" data-i="usercheck"></i></span><span class="tx">Kelulusan tiap Teman terlihat jelas</span></div></div>
       </section>
 
-      <!-- 19 Tutup Sesi (TemanBaik) -->
+      <!-- 20 Tutup Sesi (TemanBaik) -->
       <section class="sc ph rb" aria-hidden="true">
         <div class="role rb f" style="--d:.05s"><i class="ic" data-i="shield"></i>Layar TemanBaik</div>
         <h2 class="hl f" style="--d:.15s">Sesi ditutup, grup pindah ke Riwayat Hangout.</h2>
@@ -455,7 +487,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:2.6s"><span class="ib"><i class="ic" data-i="lock"></i></span><span class="tx">Ketik kata konfirmasi agar sesi tidak tertutup tak sengaja</span></div><div class="ben" style="--d:4.7s"><span class="ib"><i class="ic" data-i="award"></i></span><span class="tx">Grup pindah ke Riwayat Hangout</span></div><div class="ben" style="--d:6.1s"><span class="ib"><i class="ic" data-i="check"></i></span><span class="tx">Status Selesai tercatat di riwayat</span></div></div>
       </section>
 
-      <!-- 20 Lanjut (TemanBaik) -->
+      <!-- 21 Lanjut (TemanBaik) -->
       <section class="sc ph rb" aria-hidden="true">
         <div class="role rb f" style="--d:.05s"><i class="ic" data-i="shield"></i>Layar TemanBaik</div>
         <h2 class="hl f" style="--d:.15s">Aqidah selesai? Lanjut ke Hijrah dengan Teman yang sama.</h2>
@@ -463,7 +495,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:1.2s"><span class="ib"><i class="ic" data-i="refresh"></i></span><span class="tx">Sesi berikutnya dibuat dengan satu tombol</span></div><div class="ben" style="--d:3.8s"><span class="ib"><i class="ic" data-i="usercheck"></i></span><span class="tx">Teman yang lulus ikut otomatis</span></div><div class="ben" style="--d:6.4s"><span class="ib"><i class="ic" data-i="calendar"></i></span><span class="tx">Sesi baru siap dimulai</span></div></div>
       </section>
 
-      <!-- 21 Hapus Grup (TemanBaik) -->
+      <!-- 22 Hapus Grup (TemanBaik) -->
       <section class="sc ph rb" aria-hidden="true">
         <div class="role rb f" style="--d:.05s"><i class="ic" data-i="shield"></i>Layar TemanBaik</div>
         <h2 class="hl f" style="--d:.15s">Hapus grup dengan konfirmasi dua langkah.</h2>
@@ -471,7 +503,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:1s"><span class="ib"><i class="ic" data-i="edit"></i></span><span class="tx">Hapus lewat menu titik tiga</span></div><div class="ben" style="--d:4.2s"><span class="ib"><i class="ic" data-i="lock"></i></span><span class="tx">Ketik HAPUS; tindakan ini permanen</span></div><div class="ben" style="--d:6s"><span class="ib"><i class="ic" data-i="list"></i></span><span class="tx">Grup hilang dari daftar Hangout</span></div></div>
       </section>
 
-      <!-- 22 Ajukan (TemanBaik) -->
+      <!-- 23 Ajukan (TemanBaik) -->
       <section class="sc ph rb" aria-hidden="true">
         <div class="role rb f" style="--d:.05s"><i class="ic" data-i="shield"></i>Layar TemanBaik</div>
         <h2 class="hl f" style="--d:.15s">Teman yang siap bisa diajukan jadi TemanBaik.</h2>
@@ -479,7 +511,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:1s"><span class="ib"><i class="ic" data-i="pie"></i></span><span class="tx">Pantau performa tiap Teman</span></div><div class="ben" style="--d:3.8s"><span class="ib"><i class="ic" data-i="trending"></i></span><span class="tx">Butuh Hijrah plus skor sistem</span></div><div class="ben" style="--d:5s"><span class="ib"><i class="ic" data-i="shield"></i></span><span class="tx">Pengajuan tidak otomatis</span></div></div>
       </section>
 
-      <!-- 23 Journey (TemanBaik) -->
+      <!-- 24 Journey (TemanBaik) -->
       <section class="sc ph rb" aria-hidden="true">
         <div class="role rb f" style="--d:.05s"><i class="ic" data-i="shield"></i>Layar TemanBaik</div>
         <h2 class="hl f" style="--d:.15s">Journey: jenjang TemanBaik terlihat jelas.</h2>
@@ -487,7 +519,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:1.5s"><span class="ib"><i class="ic" data-i="trending"></i></span><span class="tx">Tier sekarang dan langkah berikutnya terlihat</span></div><div class="ben" style="--d:3.6s"><span class="ib"><i class="ic" data-i="clipcheck"></i></span><span class="tx">Syarat naik tier tampil dengan progres</span></div><div class="ben" style="--d:6.8s"><span class="ib"><i class="ic" data-i="book"></i></span><span class="tx">Learning Path berisi materi sesuai jenjang</span></div></div>
       </section>
 
-      <!-- 24 Belajar (TemanBaik) -->
+      <!-- 25 Belajar (TemanBaik) -->
       <section class="sc ph rb" aria-hidden="true">
         <div class="role rb f" style="--d:.05s"><i class="ic" data-i="shield"></i>Layar TemanBaik</div>
         <h2 class="hl f" style="--d:.15s">Belajar mandiri, kapan saja, sesuai jenjang.</h2>
@@ -495,7 +527,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
         <div class="bens"><div class="ben" style="--d:1.1s"><span class="ib"><i class="ic" data-i="check"></i></span><span class="tx">Lanjut Belajar: satu ketuk ke kelas berjalan</span></div><div class="ben" style="--d:2.8s"><span class="ib"><i class="ic" data-i="play"></i></span><span class="tx">Video dan materi bisa dibuka kapan saja</span></div><div class="ben" style="--d:5.2s"><span class="ib"><i class="ic" data-i="clipcheck"></i></span><span class="tx">Kuis per episode, progres Video dan Kuis tercatat</span></div></div>
       </section>
 
-      <!-- 25 Rencana (tanpa phone) -->
+      <!-- 26 Rencana (tanpa phone) -->
       <section class="sc" aria-hidden="true">
         <h2 class="hl f" style="--d:.1s">Hangout tumbuh: Journey sudah ada, AI QnA menyusul.</h2>
         <div class="tl" data-ovok="1"><b class="k-growx" style="--d:.5s"></b></div>
@@ -524,7 +556,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
     <button id="prev" type="button" aria-label="Adegan sebelumnya"><i class="ic" data-i="chevl"></i></button>
     <button id="next" type="button" aria-label="Adegan berikutnya"><i class="ic" data-i="chevr"></i></button>
     <div class="segs" id="segs" role="group" aria-label="Progres adegan"></div>
-    <span class="count" id="count">01 / 25</span>
+    <span class="count" id="count">01 / 26</span>
     <button class="tg" id="tgAuto" type="button" aria-pressed="true"><span class="sw"></span>Autoplay</button>
     <button class="tg" id="tgSnd" type="button" aria-pressed="true"><span class="sw"></span>Suara</button>
   </div>
@@ -534,7 +566,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
 
 <script>
 (function(){
-  var S=[{"t":"Masuk","d":11000,"r":"B","c":"Pertama masuk: pengantar aplikasi, email Darisini, pilih peran, lalu kode OTP dari email."},{"t":"Buat Grup","d":11000,"r":"B","c":"TemanBaik buat grup: nama, tipe, undang Teman lewat email, lalu pilih modul Aqidah."},{"t":"Mulai","d":11000,"r":"B","c":"TemanBaik mulai sesi: pilih lokasi dan hari, cek ringkasan Rp 0, lalu status Berlangsung."},{"t":"Hook","d":9000,"c":"Teman buka tab Hangout: grup aktif tampil dengan lencana OFFLINE dan ONLINE.","r":"T"},{"t":"Barcode","d":10000,"c":"Hari H, TemanBaik buka episode hari ini lalu tampilkan barcode kehadiran.","r":"B"},{"t":"Hadir","d":10000,"r":"T","c":"Teman pindai barcode TemanBaik; izinkan kamera sekali, lalu kehadiran langsung tercatat."},{"t":"Online","d":11000,"c":"Hangout Online: episode sama, waktu sama, tempat beda; Teman klik Hadir di lobby.","r":"T"},{"t":"Room","d":11000,"r":"B","c":"TemanBaik tunggu semua Teman hadir dan selesai download, lalu tekan Masuk Room."},{"t":"Materi FAQ","d":9500,"c":"Usai episode, Teman buka video FAQ dari pertanyaan yang sering ditanyakan.","r":"T"},{"t":"FAQ TemanBaik","d":11000,"r":"B","c":"TemanBaik putar video FAQ untuk Teman yang meminta; tiap Teman punya jatah kesempatan."},{"t":"Materi PDF","d":10000,"r":"T","c":"Teman buka Materi PDF; file Google Drive terkunci dan kata sandi tertera di aplikasi."},{"t":"Tanya","d":11000,"c":"Teman kirim pertanyaan lewat QnA, lalu pantau statusnya sampai Sudah Dijawab.","r":"T"},{"t":"Kuis","d":11000,"c":"Kuis buka H+1 sampai H+6; setelah jawaban dikirim, peringkat grup langsung tampil.","r":"T"},{"t":"Pantau Kuis","d":10000,"r":"B","c":"TemanBaik memantau kuis: lihat jumlah hasil, buka Soal, dan jawaban benar ditandai biru."},{"t":"Vibes","d":9500,"c":"Feed berisi konten pilihan; Vibes beri kabar otomatis saat ada nilai penuh.","r":"T"},{"t":"Jadwal","d":10000,"c":"TemanBaik atur jadwal lewat menu titik tiga: Libur 1x, Reschedule 2x, Booster 1x.","r":"B"},{"t":"Ubah Jadwal","d":11000,"r":"B","c":"Pindah Hari: pilih tanggal baru, ketik RESCHEDULE, centang persetujuan, lalu simpan."},{"t":"Selesai","d":9500,"c":"Episode terakhir selesai, TemanBaik konfirmasi; layar Kelulusan tampilkan hasil akhir.","r":"B"},{"t":"Tutup Sesi","d":11000,"r":"B","c":"Selesaikan Sesi: ketik \"selesaikan\", konfirmasi; grup pindah ke Riwayat Hangout."},{"t":"Lanjut","d":11000,"c":"Hangout Offline selesai: TemanBaik buat sesi Hijrah untuk Teman yang lulus, sekali tekan.","r":"B"},{"t":"Hapus Grup","d":10000,"r":"B","c":"Hapus grup: menu titik tiga, ketik HAPUS untuk konfirmasi; tindakan ini permanen."},{"t":"Ajukan","d":11000,"c":"Setelah Hijrah dan skor sistem cukup, TemanBaik bisa ajukan Teman. Tidak otomatis.","r":"B"},{"t":"Journey","d":10500,"c":"TemanBaik buka tab Journey: tier saat ini, syarat naik, dan Learning Path.","r":"B"},{"t":"Belajar","d":11000,"c":"Lanjut Belajar → episode → Materi dan Kuis; jawaban kuis tersimpan otomatis.","r":"B"},{"t":"Rencana","d":10000,"c":"Tarbiyah Online dan Jenjang TemanBaik kini di Journey; AI QnA tetap rencana.","r":"-"}];
+  var S=[{"t":"Masuk","d":11000,"r":"B","c":"Pertama masuk: pengantar aplikasi, email Darisini, pilih peran, lalu kode OTP dari email."},{"t":"Buat Grup","d":11000,"r":"B","c":"TemanBaik buat grup: nama, tipe, undang Teman lewat email, lalu pilih modul Aqidah."},{"t":"Mulai","d":11000,"r":"B","c":"TemanBaik mulai sesi: pilih lokasi dan hari, cek ringkasan Rp 0, lalu status Berlangsung."},{"t":"Hook","d":9000,"c":"Teman buka tab Hangout: grup aktif tampil dengan lencana OFFLINE dan ONLINE.","r":"T"},{"t":"Barcode","d":10000,"c":"Hari H, TemanBaik buka episode hari ini lalu tampilkan barcode kehadiran.","r":"B"},{"t":"Hadir","d":10000,"r":"T","c":"Teman pindai barcode TemanBaik; izinkan kamera sekali, lalu kehadiran langsung tercatat."},{"t":"Online","d":11000,"c":"Hangout Online: episode sama, waktu sama, tempat beda; Teman klik Hadir di lobby.","r":"T"},{"t":"Room","d":11000,"r":"B","c":"TemanBaik tunggu semua Teman hadir dan selesai download, lalu tekan Masuk Room."},{"t":"Materi FAQ","d":9500,"c":"Usai episode, Teman buka video FAQ dari pertanyaan yang sering ditanyakan.","r":"T"},{"t":"FAQ TemanBaik","d":11000,"r":"B","c":"TemanBaik putar video FAQ untuk Teman yang meminta; tiap Teman punya jatah kesempatan."},{"t":"Materi PDF","d":10000,"r":"T","c":"Teman buka Materi PDF; file Google Drive terkunci dan kata sandi tertera di aplikasi."},{"t":"Tanya","d":11000,"c":"Teman kirim pertanyaan lewat QnA, lalu pantau statusnya sampai Sudah Dijawab.","r":"T"},{"t":"Kuis","d":11000,"c":"Kuis buka H+1 sampai H+6; setelah jawaban dikirim, peringkat grup langsung tampil.","r":"T"},{"t":"Pantau Kuis","d":10000,"r":"B","c":"TemanBaik memantau kuis: lihat jumlah hasil, buka Soal, dan jawaban benar ditandai biru."},{"t":"Vibes","d":9500,"c":"Feed berisi konten pilihan; Vibes beri kabar otomatis saat ada nilai penuh.","r":"T"},{"t":"Jadwal","d":10000,"c":"TemanBaik atur jadwal lewat menu titik tiga: Libur 1x, Reschedule 2x, Booster 1x.","r":"B"},{"t":"Ubah Jadwal","d":11000,"r":"B","c":"Pindah Hari: pilih tanggal baru, ketik RESCHEDULE, centang persetujuan, lalu simpan."},{"t":"Pola Jadwal","d":11000,"r":"-","c":"Tiga tipe ubah jadwal. Batas dihitung per sesi: Pindah Hari 2×, Booster 1×, Libur 1×."},{"t":"Selesai","d":9500,"c":"Episode terakhir selesai, TemanBaik konfirmasi; layar Kelulusan tampilkan hasil akhir.","r":"B"},{"t":"Tutup Sesi","d":11000,"r":"B","c":"Selesaikan Sesi: ketik \"selesaikan\", konfirmasi; grup pindah ke Riwayat Hangout."},{"t":"Lanjut","d":11000,"c":"Hangout Offline selesai: TemanBaik buat sesi Hijrah untuk Teman yang lulus, sekali tekan.","r":"B"},{"t":"Hapus Grup","d":10000,"r":"B","c":"Hapus grup: menu titik tiga, ketik HAPUS untuk konfirmasi; tindakan ini permanen."},{"t":"Ajukan","d":11000,"c":"Setelah Hijrah dan skor sistem cukup, TemanBaik bisa ajukan Teman. Tidak otomatis.","r":"B"},{"t":"Journey","d":10500,"c":"TemanBaik buka tab Journey: tier saat ini, syarat naik, dan Learning Path.","r":"B"},{"t":"Belajar","d":11000,"c":"Lanjut Belajar → episode → Materi dan Kuis; jawaban kuis tersimpan otomatis.","r":"B"},{"t":"Rencana","d":10000,"c":"Tarbiyah Online dan Jenjang TemanBaik kini di Journey; AI QnA tetap rencana.","r":"-"}];
   var IC={
     user:'<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
     shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
@@ -586,7 +618,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
   function pad(n){return (n<10?'0':'')+n}
   function load(k,def){try{var v=localStorage.getItem(k);return v===null?def:v==='1';}catch(e){return def;}}
   function save(k,v){try{localStorage.setItem(k,v?'1':'0');}catch(e){}}
-  var PREF='ngeshare-demo-v5-';
+  var PREF='ngeshare-demo-v6-';
   var auto=load(PREF+'autoplay',true),soundOn=load(PREF+'sound',true);
 
   var AC=null,master=null,lastSfx={};
