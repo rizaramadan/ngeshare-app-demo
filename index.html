@@ -211,7 +211,7 @@ body{background:var(--pg);color:var(--ink);font-family:var(--f);font-size:15px;l
 .mag-lb{font:800 11px/1 var(--f);letter-spacing:.08em;text-transform:uppercase;color:var(--n6);margin-bottom:8px}
 .mag-in{font-family:Roboto,'Helvetica Neue',Arial,sans-serif}
 .tt .tag{margin-top:8px}
-@media (prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine){
   .sc.on [class*="k-"], .sc.on .f, .sc.on .glow{animation:none!important}
   #stp .lab{transition:none}
   .sc.on .ben,.sc.on .ben .ib,.sc.on .phone .p-scr,.sc.on .phone .p-scroll-y,.sc.on .phone .p-sheet,.sc.on .phone .p-scrim,.sc.on .phone .p-fadein,.sc.on .phone .p-swapnew,.sc.on .phone .p-tap,.sc.on .phone .p-hint,.sc.on .phone .p-sbwin,.sc.on .phone .p-cdnum,.sc.on .phone .p-type,.sc.on .phone .p-typed-ph,.sc.on .k-fillw,.sc.on .k-reveal,.sc.on .k-up,.sc.on .phone .p-segfill,.sc.on .phone .p-scroll-y2{animation:none!important}
@@ -285,7 +285,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
 #stp.dense .num{width:12px;height:12px;border-width:1.5px;font-size:0;color:transparent}
 #stp.dense .cur .num{width:30px;height:30px;font-size:14px;color:var(--p)}
 #stp.dense .cn{margin:0 2px}
-@media (prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine){
   .sc.on .phone .p-win,.sc.on .phone .p-win.pw-last,.sc.on .phone .p-spin{animation:none!important}
 }
 
@@ -307,7 +307,7 @@ td .own{display:inline-block;font:800 12px/1 var(--f);padding:5px 9px;border-rad
 .sc.on .pj-mk.mv{animation:pjin .4s ease var(--d,0s) both,pjmv .8s cubic-bezier(.3,.7,.2,1) var(--m,0s) both}
 @keyframes pjin{from{opacity:0}to{opacity:1}}
 @keyframes pjmv{to{transform:translate(var(--dx),var(--dy));background:var(--ac);color:var(--af);box-shadow:0 8px 16px rgba(23,18,79,.25)}}
-@media (prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine){
   .sc.on .pj-mk,.sc.on .pj-mk.mv{animation:none!important}
   .pj-mk.mv{transform:translate(var(--dx),var(--dy));background:var(--ac);color:var(--af)}
 }
